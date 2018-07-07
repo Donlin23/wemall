@@ -79,7 +79,7 @@
       <version>1.6.11</version>
     </dependency>
 
-    <!-- mybatis -->
+    <!-- mybatis-plugin -->
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis-spring</artifactId>
@@ -91,7 +91,7 @@
       <version>${org.mybatis.version}</version>
     </dependency>
 
-    <!-- MyBatis-generator ?? -->
+    <!-- MyBatis-generator -->
     <dependency>
       <groupId>org.mybatis.generator</groupId>
       <artifactId>mybatis-generator-core</artifactId>
@@ -185,7 +185,6 @@
       <artifactId>hashids</artifactId>
       <version>1.0.1</version>
     </dependency>
-
 
     <!-- mybatis pager -->
     <dependency>
