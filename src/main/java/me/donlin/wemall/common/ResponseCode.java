@@ -4,7 +4,7 @@ package me.donlin.wemall.common;
  * @Author: Donlin
  * @Date: Created in 16:24 2018/7/7
  * @Version: 1.0
- * @Description:
+ * @Description: 该枚举类定义服务端响应的状态代码
  */
 public enum ResponseCode {
 

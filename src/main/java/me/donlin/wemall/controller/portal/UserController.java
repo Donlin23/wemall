@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  * @Author: Donlin
  * @Date: Created in 15:59 2018/7/7
  * @Version: 1.0
- * @Description:
+ * @Description: /portal 定义的是门户站点，供前端用户管理正常使用
  */
 @Controller
 @RequestMapping("/user")

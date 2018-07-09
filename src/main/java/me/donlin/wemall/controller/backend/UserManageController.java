@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
  * @Author: Donlin
  * @Date: Created in 14:16 2018/7/8
  * @Version: 1.0
- * @Description: 用户管理的后台程序
+ * @Description: /backend 定义的是用户管理的后台程序的控制器，供管理员登录
  */
 @Controller
 @RequestMapping("/manage/user")

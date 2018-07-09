@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  * @Author: Donlin
  * @Date: Created in 10:44 2018/7/8
  * @Version: 1.0
- * @Description: 存放本地缓存
+ * @Description: 定义一个存放本地缓存的Token Cache块，当前用户的session信息就存放在这里
  */
 public class TokenCache {
 

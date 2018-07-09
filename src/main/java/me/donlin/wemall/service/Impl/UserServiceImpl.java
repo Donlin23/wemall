@@ -17,7 +17,7 @@ import java.util.UUID;
  * @Author: Donlin
  * @Date: Created in 16:08 2018/7/7
  * @Version: 1.0
- * @Description:
+ * @Description: 用户管理模块服务接口的实现
  */
 @Service("iUserService")
 public class UserServiceImpl implements IUserService {
@@ -90,7 +90,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public ServerResponse<String> selectQuestion(String username){
 
-        ServerResponse validResponse = this.checkValid(username, Const.CURRENT_USER);
+        ServerResponse validResponse = this.checkValid(username, Const.USERNAME);
         if (validResponse.isSuccess()){  // 有点疑问？
             return ServerResponse.createByError("用户不存在");
         }
@@ -108,7 +108,7 @@ public class UserServiceImpl implements IUserService {
             //说明问题及问题答案是这个用户的，并且是正确的
             String forgetToken = UUID.randomUUID().toString();
             TokenCache.setKey(TokenCache.TOKEN_PREFIX + username, forgetToken);
-            ServerResponse.createBySuccess(forgetToken);
+            return ServerResponse.createBySuccess(forgetToken);
         }
         return ServerResponse.createByError("问题的答案错误");
     }
@@ -118,7 +118,7 @@ public class UserServiceImpl implements IUserService {
         if (StringUtils.isBlank(forgetToken)){
             return ServerResponse.createByError("参数错误，Token需要需要传递");
         }
-        ServerResponse validResponse = this.checkValid(username, Const.CURRENT_USER);
+        ServerResponse validResponse = this.checkValid(username, Const.USERNAME);
         if (validResponse.isSuccess()){
             //用户不存在
             return ServerResponse.createByError("用户不存在");
@@ -164,6 +164,7 @@ public class UserServiceImpl implements IUserService {
         }
         User updateUser = new User();
         updateUser.setId(user.getId());
+        updateUser.setUsername(user.getUsername());
         updateUser.setEmail(user.getEmail());
         updateUser.setPhone(user.getPhone());
         updateUser.setQuestion(user.getQuestion());
@@ -185,6 +186,22 @@ public class UserServiceImpl implements IUserService {
         user.setPassword(StringUtils.EMPTY);
         return ServerResponse.createBySuccess(user);
     }
+
+    //backend
+    /**
+     * 校验用户是否是管理员
+     * @param user
+     * @return
+     */
+    @Override
+    public ServerResponse checkAdminRole(User user){
+        if (user != null && user.getRole().intValue() == Const.Role.ROLE_ADMIN){
+            return ServerResponse.createBySuccess();
+        }
+        return ServerResponse.createByError();
+    }
+
+
 
 
 }

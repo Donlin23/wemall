@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @Author: Donlin
  * @Date: Created in 16:09 2018/7/7
  * @Version: 1.0
- * @Description: 通用的泛型构造的服务端响应对象
+ * @Description: 定义了服务响应对象ServerResponse，这是一个使用泛型构造的服务端响应对象，相当于API接口
  */
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 //保证序列化json的时候，如果是null的对象，key也会消失

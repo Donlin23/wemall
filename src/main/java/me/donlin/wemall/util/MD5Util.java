@@ -32,7 +32,6 @@ public class MD5Util {
         return hexDights[d1] + hexDights[d2];
     }
 
-
     private static String MD5Encode(String origin, String charsetname){
         String resultString = null;
         resultString = new String(origin);

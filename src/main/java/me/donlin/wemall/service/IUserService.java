@@ -7,7 +7,7 @@ import me.donlin.wemall.pojo.User;
  * @Author: Donlin
  * @Date: Created in 16:05 2018/7/7
  * @Version: 1.0
- * @Description:
+ * @Description: 用户管理模块服务接口
  */
 public interface IUserService {
 
@@ -28,4 +28,6 @@ public interface IUserService {
     ServerResponse<User> updateInformation(User user);
 
     ServerResponse<User> getInformation(Integer userId);
+
+    ServerResponse checkAdminRole(User user);
 }

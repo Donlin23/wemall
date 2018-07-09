@@ -21,7 +21,12 @@
     from wemall_category
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectCategoryChildrenByParentId" resultMap="BaseResultMap" parameterType="int">
+      select <include refid="Base_Column_List" />
+      from wemall_category
+      where parent_id = #{parentId}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from wemall_category
     where id = #{id,jdbcType=INTEGER}
   </delete>

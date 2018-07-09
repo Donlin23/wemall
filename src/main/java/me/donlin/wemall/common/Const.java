@@ -4,7 +4,7 @@ package me.donlin.wemall.common;
  * @Author: Donlin
  * @Date: Created in 17:23 2018/7/7
  * @Version: 1.0
- * @Description: 常量类
+ * @Description: 工程中使用到的常量类，集中到这个类中
  */
 public class Const {
 
