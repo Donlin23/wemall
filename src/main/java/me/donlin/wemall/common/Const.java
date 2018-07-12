@@ -1,7 +1,6 @@
 package me.donlin.wemall.common;
 
 import com.google.common.collect.Sets;
-import me.donlin.wemall.pojo.Product;
 
 import java.util.Set;
 
